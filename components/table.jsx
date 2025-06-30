@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react'
-import data from '../data/college';
+import data from "../data/popular_colleges_modified";
 
 import DropdownList from "react-widgets/DropdownList";
 import Link from 'next/link';
@@ -11,19 +11,19 @@ const Table = () => {
     useEffect(() => setHasMounted(true), []);
 
     const details =[
-      {label:"Overview",key:"OverView"},
+      {label:"Overview",key:"INSTNM"},
     { label: 'ACT Score', key: 'ACTRange' },
     { label: 'SAT Score', key: 'SATRange' },
-    { label: 'Average GPA', key: 'AvgGPA' },
     {label:"Admission Chances",key:"Admission Chances"},
-    { label: 'Fees', key: 'Fees' },
+    { label: 'Tuition Fee (In State)', key: 'TUITIONFEE_IN' },
+    { label: 'Tuition Fee (Out State)', key: 'TUITIONFEE_OUT' },
     { label: 'Popular Majors', key: 'PopularMajors' },
-    { label: 'Acceptance Rate', key: 'AcceptanceRate' },
-    { label: 'Graduation Rate', key: 'GraduationRate' },
+    { label: 'Acceptance Rate', key: 'ADM_RATE' },
+    { label: 'Graduation Rate', key: 'C150_4' },
   ];
 
       const [query,setQuery]=useState({
-      name: "Enter College Name"
+      INSTNM: "Enter College Name"
         });
       const inputRef = useRef(null);
 
@@ -65,8 +65,8 @@ const Table = () => {
           ref={inputRef}
           className='max-w-xl w-[90vw] sm:w-full'
           data={data}
-          textField={"name"}
-          dataKey={"name"}
+          textField={"INSTNM"}
+          dataKey={"INSTNM"}
           value={query}
           onChange={(nextValue) => setQuery(nextValue)}
             onSelect={(value) => 
@@ -106,7 +106,7 @@ const Table = () => {
                        key={index}>
                         {
                           college?(
-                            <span className='font-poppins'> {college.name} </span>
+                            <span className='font-poppins'> {college.INSTNM} </span>
                           ):
                           (
                              <span> College {index+1} </span>
@@ -132,20 +132,20 @@ const Table = () => {
                       {
                         college?
                         (<button 
-                      className='bg-purple-600 ml-2 px-2 rounded-xl cursor-pointer  
-                      hover:opacity-80 active:opacity-70 text-white py-2 text-xs lg:text-base'
+                      className='bg-purple-600 ml-2 sm:px-6 md:px-8 px-4 rounded-xl cursor-pointer  
+                      hover:opacity-80 active:opacity-70 text-white sm:py-2 py-2.5 text-xs lg:text-base'
                       onClick={()=>removeCollege(idx)}
-                      >Remove
+                      >Delete
                       </button>)
                       :
                       (<button 
-                      className='bg-purple-600 ml-2 px-2 rounded-xl cursor-pointer  
+                      className='bg-purple-600 ml-2 sm:px-6 md:px-8 px-4 rounded-xl cursor-pointer  
                       hover:opacity-80 active:opacity-70 text-white py-2 text-sm lg:text-base'
                       onClick={handleClick}
                       >
-                        <span className="block md:hidden">Add</span>
-                        <span className="hidden md:block">Add College</span>
-                      </button>)
+                        Insert
+                      </button>
+                      )
                       }
                       
                     </th>
@@ -161,7 +161,7 @@ const Table = () => {
                    key={detail.key}>
                      <td className='pb-6 pt-6 w-[140px] sm:w-[180px] px-2 sm:text-xl font-semi-bold text-base '>{detail.label}</td>
                      {
-                      detail.key=="Admission Chances"?(
+                      detail.label=="Admission Chances"?(
                         colleges?.map((college,idx)=>
 
                         college ?
@@ -174,15 +174,16 @@ const Table = () => {
                             href={"https://www.gradgpt.com/college-admissions-calculator"}
                             target="_blank" rel="noopener noreferrer"
                             className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
-                            >Calculate</Link>
+                            >Calculate
+                            </Link>
                         </td>
                         )
                         :(
-                         <td key={idx}><p></p></td>  
+                         <td className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
+                          key={idx}><p></p></td>  
                         )
                       )
-                      ):
-                      
+                      ):            
                       detail.key=="PopularMajors"?
                       (
                         colleges?.map((college,idx)=>(
@@ -193,14 +194,10 @@ const Table = () => {
                                px-4 space-y-2 ">
 
                               {college?.PopularMajors?.map((major, index) => {
-                                const match = major.match(/^(.*?)\s*\((.*?)\)$/);
-                                const subject = match?.[1] || major;
-                                const percentage = match?.[2] || "";
-
                                 return (
                                   <li key={index} className="">
-                                    <div className="text-[#495057]">{subject}</div>
-                                    <div className="text-[#495057]">{percentage}</div>
+                                    <div className="text-[#495057]">{major.major}</div>
+                                    <div className="text-[#495057]">{`${major.percentage}%`}</div>
                                   </li>
                                 );
                               })}
@@ -210,7 +207,8 @@ const Table = () => {
                       ):(
                       colleges.map((college,idx)=>(
                         <td
-                        className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px]  text-center align-middle pb-6 pt-6'
+                        className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px] 
+                         text-center align-middle pb-6 pt-6 px-2'
                         key={idx}>
                           <p className='font-poppins text-base text-[#495057]'>{college?.[detail.key]??""}</p>
                         </td>
