@@ -51,9 +51,10 @@ const Table = () => {
     return (
         <div className=''>
 
-        <div className=' hover:shadow-lg transition-shadow duration-300 mt-10 mb-10 py-10
-         shadow-md bg-gray-100 w-[70%] flex flex-col items-center justify-center  mx-auto
-          rounded-xl max-w-[90vw] sm:w-[95%] '>
+        <div className=' transition-shadow duration-300 mt-10 mb-10 py-10
+            shadow-md dark:shadow-lg hover:shadow-lg dark:hover:shadow-2xl 
+            bg-gray-100 dark:bg-gray-700 w-[70%] flex flex-col items-center justify-center mx-auto
+            rounded-xl max-w-[90vw] sm:w-[95%] text-black dark:text-white'>
             {
               colleges?.some(college => college === null) && (
                 <div>
@@ -63,11 +64,14 @@ const Table = () => {
               hasMounted&&
               <DropdownList
           ref={inputRef}
-          className='max-w-xl w-[90vw] sm:w-full'
+          className='max-w-xl w-[90vw] sm:w-full focus:outline-none focus:ring-2
+           focus:ring-purple-500 dark:focus:ring-purple-300
+           bg-white dark:bg-gray-900 '
           data={data}
           textField={"INSTNM"}
           dataKey={"INSTNM"}
           value={query}
+
           onChange={(nextValue) => setQuery(nextValue)}
             onSelect={(value) => 
               {
@@ -97,7 +101,7 @@ const Table = () => {
           <table
           >
             <thead>
-              <tr className='bg-gray-200'>
+              <tr className='bg-gray-200 dark:bg-gray-700 text-black dark:text-white'>
                 <th></th>
                 {
                   colleges.map((college,index)=>
@@ -157,7 +161,9 @@ const Table = () => {
               {
                 details.map((detail)=>(
                   <tr
-                  className='even:bg-gray-100 hover:bg-gray-200 transition-colors duration-200'
+                  className='even:bg-gray-100 even:dark:bg-gray-800 hover:bg-gray-200
+                   hover:dark:bg-gray-700 transition-colors duration-200 text-black 
+                   dark:text-white'
                    key={detail.key}>
                      <td className='pb-6 pt-6 w-[140px] sm:w-[180px] px-2 sm:text-xl font-semi-bold text-base '>{detail.label}</td>
                      {
@@ -173,7 +179,7 @@ const Table = () => {
                             <Link 
                             href={"https://www.gradgpt.com/college-admissions-calculator"}
                             target="_blank" rel="noopener noreferrer"
-                            className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
+                            className='text-[#0A88D3]   hover:text-[#0667A8] hover:underline'
                             >Calculate
                             </Link>
                         </td>
@@ -196,8 +202,8 @@ const Table = () => {
                               {college?.PopularMajors?.map((major, index) => {
                                 return (
                                   <li key={index} className="">
-                                    <div className="text-[#495057]">{major.major}</div>
-                                    <div className="text-[#495057]">{`${major.percentage}%`}</div>
+                                    <div className="text-[#495057] dark:text-gray-200">{major.major}</div>
+                                    <div className="text-[#495057] dark:text-gray-200">{`${major.percentage}%`}</div>
                                   </li>
                                 );
                               })}
@@ -210,7 +216,7 @@ const Table = () => {
                         className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px] 
                          text-center align-middle pb-6 pt-6 px-2'
                         key={idx}>
-                          <p className='font-poppins text-base text-[#495057]'>{college?.[detail.key]??""}</p>
+                          <p className='font-poppins text-base text-[#495057] dark:text-gray-200'>{college?.[detail.key]??""}</p>
                         </td>
                       ))
                       )
