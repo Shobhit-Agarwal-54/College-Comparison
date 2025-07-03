@@ -17,7 +17,7 @@ const Table = () => {
     // {label:"Admission Chances",key:"Admission Chances"},
     { label: 'Tuition Fee (In State)', key: 'TUITIONFEE_IN' },
     { label: 'Tuition Fee (Out State)', key: 'TUITIONFEE_OUT' },
-    { label: 'Popular Majors', key: 'PopularMajors' },
+    { label: 'Popular Majors (% of Total Grads)', key: 'PopularMajors' },
     { label: 'Acceptance Rate', key: 'ADM_RATE' },
     { label: 'Graduation Rate', key: 'C150_4' },
   ];
