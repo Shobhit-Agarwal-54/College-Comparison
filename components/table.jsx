@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react'
-import data from "../data/popular_colleges_modified";
+import data from "../data/All_colleges_modified";
 
 import DropdownList from "react-widgets/DropdownList";
 import Link from 'next/link';
@@ -11,10 +11,10 @@ const Table = () => {
     useEffect(() => setHasMounted(true), []);
 
     const details =[
-      {label:"Overview",key:"INSTNM"},
-    { label: 'ACT Score', key: 'ACTRange' },
-    { label: 'SAT Score', key: 'SATRange' },
-    {label:"Admission Chances",key:"Admission Chances"},
+      // {label:"Overview",key:"INSTNM"},
+    { label: 'ACT Range (25th/75th %ile)', key: 'ACTRange' },
+    { label: 'SAT Range (25th/75th %ile)', key: 'SATRange' },
+    // {label:"Admission Chances",key:"Admission Chances"},
     { label: 'Tuition Fee (In State)', key: 'TUITIONFEE_IN' },
     { label: 'Tuition Fee (Out State)', key: 'TUITIONFEE_OUT' },
     { label: 'Popular Majors', key: 'PopularMajors' },
@@ -167,29 +167,29 @@ const Table = () => {
                    key={detail.key}>
                      <td className='pb-6 pt-6 w-[140px] sm:w-[180px] px-2 sm:text-xl font-semi-bold text-base '>{detail.label}</td>
                      {
-                      detail.label=="Admission Chances"?(
-                        colleges?.map((college,idx)=>
+                      // detail.label=="Admission Chances"?(
+                      //   colleges?.map((college,idx)=>
 
-                        college ?
-                        (
-                        <td
-                        key={idx}
-                        className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px]  text-center align-middle pb-6 pt-6'
-                        >  
-                            <Link 
-                            href={"https://www.gradgpt.com/college-admissions-calculator"}
-                            target="_blank" rel="noopener noreferrer"
-                            className='text-[#0A88D3]   hover:text-[#0667A8] hover:underline'
-                            >Calculate
-                            </Link>
-                        </td>
-                        )
-                        :(
-                         <td className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
-                          key={idx}><p></p></td>  
-                        )
-                      )
-                      ):            
+                      //   college ?
+                      //   (
+                      //   <td
+                      //   key={idx}
+                      //   className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px]  text-center align-middle pb-6 pt-6'
+                      //   >  
+                      //       <Link 
+                      //       href={"https://www.gradgpt.com/college-admissions-calculator"}
+                      //       target="_blank" rel="noopener noreferrer"
+                      //       className='text-[#0A88D3]   hover:text-[#0667A8] hover:underline'
+                      //       >Calculate
+                      //       </Link>
+                      //   </td>
+                      //   )
+                      //   :(
+                      //    <td className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
+                      //     key={idx}><p></p></td>  
+                      //   )
+                      // )
+                      // ):            
                       detail.key=="PopularMajors"?
                       (
                         colleges?.map((college,idx)=>(
@@ -232,4 +232,4 @@ const Table = () => {
   )
 }
 
-export default Table
+export default Table;
