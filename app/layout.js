@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
     <html lang="en"
     >
       <head>
+      <meta name="google-site-verification" content="Pkh1pGVVCt7c6Uo6rF9BRw-qVdDuKTyWa8d3zFXkHlE" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
