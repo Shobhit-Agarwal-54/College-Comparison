@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import 'react-widgets/styles.css';
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  /* Add more overrides if needed */
+}
+
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

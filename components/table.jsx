@@ -50,11 +50,20 @@ const Table = () => {
       }
     return (
         <div className=''>
-
-        <div className=' transition-shadow duration-300 mt-10 mb-10 py-10
-            shadow-md dark:shadow-lg hover:shadow-lg dark:hover:shadow-2xl 
-            bg-gray-100 dark:bg-gray-700 w-[70%] flex flex-col items-center justify-center mx-auto
-            rounded-xl max-w-[90vw] sm:w-[95%] text-black dark:text-white'>
+            <Link href="/"
+            className="flex items-center  gap-x-3 p-4"
+            >
+            <img 
+                src="/Logo.webp"
+                alt="US College Comparator Logo"
+                className="h-12 w-12 rounded-full object-cover cursor-pointer ml-4 mt-4"
+            />
+             <h4 className="text-lg font-semibold text-gray-800">CompareMyCollege</h4>
+            </Link>
+        {/* dark:shadow-lg  dark:hover:shadow-2xl dark:bg-gray-700 dark:text-white */}
+        <div className=' transition-shadow duration-300 mt-3 mb-10 py-10
+            shadow-md hover:shadow-lg bg-gray-100  w-[70%] flex flex-col items-center justify-center mx-auto
+            rounded-xl max-w-[80vw] sm:w-[95%] text-black '>
             {
               colleges?.some(college => college === null) && (
                 <div>
@@ -64,9 +73,10 @@ const Table = () => {
               hasMounted&&
               <DropdownList
           ref={inputRef}
+// dark:focus:ring-purple-300  dark:bg-gray-900
           className='max-w-xl w-[90vw] sm:w-full focus:outline-none focus:ring-2
-           focus:ring-purple-500 dark:focus:ring-purple-300
-           bg-white dark:bg-gray-900 '
+           focus:ring-purple-500 
+           bg-white  '
           data={data}
           textField={"INSTNM"}
           dataKey={"INSTNM"}
@@ -101,7 +111,8 @@ const Table = () => {
           <table
           >
             <thead>
-              <tr className='bg-gray-200 dark:bg-gray-700 text-black dark:text-white'>
+{/* dark:bg-gray-700   dark:text-white*/}
+              <tr className='bg-gray-200  text-black'>
                 <th></th>
                 {
                   colleges.map((college,index)=>
@@ -161,35 +172,13 @@ const Table = () => {
               {
                 details.map((detail)=>(
                   <tr
-                  className='even:bg-gray-100 even:dark:bg-gray-800 hover:bg-gray-200
-                   hover:dark:bg-gray-700 transition-colors duration-200 text-black 
-                   dark:text-white'
+                // hover:dark:bg-gray-700 dark:text-white even:dark:bg-gray-800
+                  className='even:bg-gray-100  hover:bg-gray-200
+                    transition-colors duration-200 text-black 
+                   '
                    key={detail.key}>
                      <td className='pb-6 pt-6 w-[140px] sm:w-[180px] px-2 sm:text-xl font-semi-bold text-base '>{detail.label}</td>
-                     {
-                      // detail.label=="Admission Chances"?(
-                      //   colleges?.map((college,idx)=>
-
-                      //   college ?
-                      //   (
-                      //   <td
-                      //   key={idx}
-                      //   className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px]  text-center align-middle pb-6 pt-6'
-                      //   >  
-                      //       <Link 
-                      //       href={"https://www.gradgpt.com/college-admissions-calculator"}
-                      //       target="_blank" rel="noopener noreferrer"
-                      //       className='text-[#0A88D3]   hover:text-[#0667A8] hover:underline'
-                      //       >Calculate
-                      //       </Link>
-                      //   </td>
-                      //   )
-                      //   :(
-                      //    <td className='text-[#0A88D3]  hover:text-[#0667A8] hover:underline'
-                      //     key={idx}><p></p></td>  
-                      //   )
-                      // )
-                      // ):            
+                     {           
                       detail.key=="PopularMajors"?
                       (
                         colleges?.map((college,idx)=>(
@@ -202,8 +191,9 @@ const Table = () => {
                               {college?.PopularMajors?.map((major, index) => {
                                 return (
                                   <li key={index} className="">
-                                    <div className="text-[#495057] dark:text-gray-200">{major.major}</div>
-                                    <div className="text-[#495057] dark:text-gray-200">{`${major.percentage}%`}</div>
+                                    {/*dark:text-gray-200 */}
+                                    <div className="text-[#495057] ">{major.major}</div>
+                                    <div className="text-[#495057]">{`${major.percentage}%`}</div>
                                   </li>
                                 );
                               })}
@@ -216,7 +206,8 @@ const Table = () => {
                         className='whitespace-normal break-words  max-w-[140px] sm:max-w-[180px] 
                          text-center align-middle pb-6 pt-6 px-2'
                         key={idx}>
-                          <p className='font-poppins text-base text-[#495057] dark:text-gray-200'>{college?.[detail.key]??""}</p>
+                          {/* dark:text-gray-200 */}
+                          <p className='font-poppins text-base text-[#495057] '>{college?.[detail.key]??""}</p>
                         </td>
                       ))
                       )

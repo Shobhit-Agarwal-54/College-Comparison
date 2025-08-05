@@ -7,35 +7,46 @@ import { useState } from "react"
 const Engineeringcalifornia = () => {
   const [pageNumber,setpageNumber]=useState(0);
   return (
-        <main className="min-h-screen bg-gray-100 py-10 px-4">
+        <main className="min-h-screen bg-gray-100  px-4 sm:px-6 md:px-8">
+            
+            <Link href="/"
+            className="flex items-center  gap-x-3 p-4"
+            >
+            <img 
+                src="/Logo.webp"
+                alt="US College Comparator Logo"
+                className="h-12 w-12 rounded-full object-cover cursor-pointer ml-4 mt-4"
+            />
+             <h4 className="text-lg font-semibold text-gray-800">CompareMyCollege</h4>
+            </Link>
+
           <div className="max-w-3xl  mx-auto py-4">
-          <h1 className="font-bold text-gray-800  text-4xl text-center">Best Engineering Colleges in California</h1>
-          <div className="flex  py-4">
-          <h4 className=" text-sm  px-6">Updated : <span className="text-purple-500">4th August 2025</span></h4>
-            <div className="flex  gap-2 text-sm">
-            <span className="text-sm ">Written by:</span>
+          <h1 className="font-bold text-gray-800 text-2xl sm:text-3xl lg:text-4xl text-center">Best Engineering Colleges in California</h1>
+          <div className="flex flex-col sm:flex-row gap-4 py-4 sm:justify-center">
+          <h4 className=" text-sm sm:text-base">Updated : <span className="text-purple-500">4th August 2025</span></h4>
+            <div className="flex  gap-2 text-sm">   
+            <span className="text-sm sm:text-base ">Written by:</span>
             <img
               src="/Photo.jpg"
               alt="Author"
               className="h-6 w-6 rounded-full border border-gray-300 shadow-sm"
             />
-            <span className="font-medium text-gray-800">Shobhit Agarwal</span>
+            <span className="font-medium sm:text-base text-gray-800">Shobhit Agarwal</span>
           </div>
           </div>
           <img 
-          className="w-full h-auto"
-          src={"/EngineeringCalifornia.png"}></img>
+          className="w-full h-auto rounded-xl shadow-md mt-2"
+          src={"/B1S1.webp"}></img>
+          <p className="text-center mt-2">Stanford University</p>
           </div>
 
           <section className="max-w-3xl mx-auto px-4 py-4">
-  <p className="text-gray-600 text-lg leading-relaxed ">
-    California, the epicenter of technological innovation and home to Silicon Valley, 
-    hosts some of the world’s most prestigious engineering institutions. From breakthrough
-     research facilities to state-of-the-art campuses, the Golden State offers aspiring 
-     engineers not just academic excellence, but also unmatched industry exposure and career 
-     opportunities. Whether you're dreaming of launching your own startup or contributing to
-      global tech giants, these top 10 engineering colleges in California can pave the way to
-       your future. Here is the list<span className="text-bold text-gray-950"> ranked from top to bottom</span>.
+  <p className="text-gray-600 text-base sm:text-lg leading-relaxed ">
+   Choosing the right engineering college is more than a decision—it’s a defining moment. For students chasing big dreams and parents seeking a secure future for their children, California offers the perfect blend of opportunity, innovation, and prestige.
+But with so many top-tier colleges, how do you know which one is the right fit? The wrong choice could mean missed opportunities, mismatched goals, or career delays.
+In this blog, we break down the best engineering colleges in California, highlighting their strengths, career outcomes, and campus vibes—so you can make a confident, informed choice that sets you up for success.
+Here is the list 
+<span className="text-bold text-gray-950"> ranked from top to bottom</span>.
   </p>
 </section>
       <StanfordCard
@@ -305,9 +316,9 @@ const Engineeringcalifornia = () => {
     "Active clubs and student-led innovation teams"
   ]}
 />
-<div className="mx-auto max-w-3xl mt-4 mb-4">
-<h1 className="font-bold text-gray-800  text-2xl text-center mb-4">Which college is right for you?</h1>
-<p className="text-gray-600 text-lg leading-relaxed">Every college on this list is outstanding in its own way. Whether you want research excellence
+<div className="mx-auto max-w-3xl mt-4 mb-4 px-4">
+<h1 className="font-bold text-gray-800 text-xl sm:text-2xl text-center mb-4">Which college is right for you?</h1>
+<p className="text-gray-600  text-base sm:text-lg leading-relaxed">Every college on this list is outstanding in its own way. Whether you want research excellence
   (Stanford, Caltech), job-readiness (SJSU, Cal Poly), or a 
   balanced public school experience (UC campuses), California has something tailored to your goals.
   Still unsure? Use our  

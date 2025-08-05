@@ -14,7 +14,7 @@ export default function StanfordCard({name,about,department,advantages,outcomes,
   };
 
   return (
-    <div className="relative max-w-4xl mx-auto">
+    <div className="relative px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       {/* Scroll Buttons */}
       <button
         onClick={() => scroll('left')}
@@ -36,19 +36,19 @@ export default function StanfordCard({name,about,department,advantages,outcomes,
         className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 px-8 py-6 scrollbar-hide"
       >
         {/* Page 1 */}
-        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-6 space-y-4">
-          <h2 className="text-2xl font-bold">{name}</h2>
+        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl  p-4 sm:p-6 space-y-4">
+          <h2 className="text-xl sm:text-2xl font-bold">{name}</h2>
 
           <div>
-            <h3 className="text-xl font-semibold"> About the School:</h3>
-            <p>
+            <h3 className="text-lg sm:text-xl font-semibold"> About the School:</h3>
+            <p className='text-sm sm:text-base'>
             {about}
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold">Top Engineering Departments:</h3>
-            <ul className="list-disc list-inside">
+            <h3 className="sm:text-xl text-lg font-semibold">Top Engineering Departments:</h3>
+            <ul className="list-disc list-inside text-sm sm:text-base">
                 {
                 department.map((dept,index)=>
                 <li key={index}>{dept}</li>
@@ -59,9 +59,9 @@ export default function StanfordCard({name,about,department,advantages,outcomes,
         </div>
 
         {/* Page 2 */}
-        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-6 space-y-4">
-          <h3 className="text-xl font-semibold">Unique Advantages:</h3>
-          <ul className="list-disc list-inside">
+        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-4 sm:p-6 space-y-4">
+          <h3 className="text-lg sm:text-xl font-semibold">Unique Advantages:</h3>
+          <ul className="list-disc list-inside text-sm sm:text-base">
                             {
                 advantages.map((advt,index)=>
                 <li key={index}>{advt}</li>
@@ -71,25 +71,28 @@ export default function StanfordCard({name,about,department,advantages,outcomes,
         </div>
 
         {/* Page 3 */}
-        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-6 space-y-4">
+        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-4 sm:p-6 space-y-4">
           <div>
-            <h3 className="text-xl font-semibold">Career Outcomes:</h3>
+            <h3 className="sm:text-xl text-lg font-semibold">Career Outcomes:</h3>
             {
                 outcomes.map((outcome,index)=>
-                <p key={index}>{outcome}</p>
+                <p className='text-sm sm:text-base'
+                key={index}>{outcome}</p>
                 )
             }
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold">Campus Vibe:</h3>
+            <h3 className="sm:text-xl text-lg font-semibold">Campus Vibe:</h3>
             {
                 vibes.map((vibe,index)=>
-                <p key={index}>{vibe}</p>
+                <p key={index}
+                className='text-sm sm:text-base'
+                >{vibe}</p>
                 )
             }
           </div>
-          <p className='text-gray-900 text-lg leading-relaxed'>Want to compare this college with others? Try our
+          <p className='text-gray-900 text-sm sm:text-base leading-relaxed'>Want to compare this college with others? Try our
             <Link
             target="_blank"
             rel="noopener noreferrer"
