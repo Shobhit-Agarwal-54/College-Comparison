@@ -1,44 +1,18 @@
 "use client";
-import StanfordCard from "./card";
+import StanfordCard from "../components/card1";
 import  Link  from "next/link";
-import { useState } from "react"
-// import asn from "../../public/Photo,jpg"
+import Logo from "../components/logo";
+import FooterBtn from "@/components/footerBtn";
 
 const Engineeringcalifornia = () => {
-  const [pageNumber,setpageNumber]=useState(0);
   return (
-        <main className="min-h-screen bg-gray-100  px-4 sm:px-6 md:px-8">
-            
-            <Link href="/"
-            className="flex items-center  gap-x-3 p-4"
-            >
-            <img 
-                src="/Logo.webp"
-                alt="US College Comparator Logo"
-                className="h-12 w-12 rounded-full object-cover cursor-pointer ml-4 mt-4"
-            />
-             <h4 className="text-lg font-semibold text-gray-800">CompareMyCollege</h4>
-            </Link>
-
-          <div className="max-w-3xl  mx-auto py-4">
-          <h1 className="font-bold text-gray-800 text-2xl sm:text-3xl lg:text-4xl text-center">Best Engineering Colleges in California</h1>
-          <div className="flex flex-col sm:flex-row gap-4 py-4 sm:justify-center">
-          <h4 className=" text-sm sm:text-base">Updated : <span className="text-purple-500">4th August 2025</span></h4>
-            <div className="flex  gap-2 text-sm">   
-            <span className="text-sm sm:text-base ">Written by:</span>
-            <img
-              src="/Photo.jpg"
-              alt="Author"
-              className="h-6 w-6 rounded-full border border-gray-300 shadow-sm"
-            />
-            <span className="font-medium sm:text-base text-gray-800">Shobhit Agarwal</span>
-          </div>
-          </div>
-          <img 
-          className="w-full h-auto rounded-xl shadow-md mt-2"
-          src={"/B1S1.webp"}></img>
-          <p className="text-center mt-2">Stanford University</p>
-          </div>
+        <main className="min-h-screen bg-gray-100  px-4 sm:px-6 md:px-8">            
+            <Logo
+            title={"Best Engineering Colleges in California"}
+            date={"4th August 2025"}
+            imgsrc={"/B1S1.webp"}
+            caption={"Stanford University"}
+            ></Logo>
 
           <section className="max-w-3xl mx-auto px-4 py-4">
   <p className="text-gray-600 text-base sm:text-lg leading-relaxed ">
@@ -316,37 +290,13 @@ Here is the list
     "Active clubs and student-led innovation teams"
   ]}
 />
-<div className="mx-auto max-w-3xl mt-4 mb-4 px-4">
-<h1 className="font-bold text-gray-800 text-xl sm:text-2xl text-center mb-4">Which college is right for you?</h1>
-<p className="text-gray-600  text-base sm:text-lg leading-relaxed">Every college on this list is outstanding in its own way. Whether you want research excellence
-  (Stanford, Caltech), job-readiness (SJSU, Cal Poly), or a 
-  balanced public school experience (UC campuses), California has something tailored to your goals.
-  Still unsure? Use our  
-  <Link
-  target="_blank"
-  rel="noopener noreferrer"
-  href={"https://college-comparison.vercel.app/"}
-  > <span className="text-purple-500">College Comparator Tool </span> </Link> 
-  to compare quickly by tuition fees, SAT and ACT scores, Popular Majors, Admission Rates and more, all in one place.
-  <span className="text-bold text-gray-950"> Thanks for reading. Hope it was helpful.</span>
-</p>
-    {/* <button className="bg-purple-600 ml-2 sm:px-6 md:px-8 px-4 rounded-xl cursor-pointer  
-    hover:opacity-80 active:opacity-70 text-white font-bold sm:py-2 py-2.5 text-xs lg:text-base">
-    <Link href="/" className="btn btn-primary mt-4">
-    Compare Colleges
-    </Link>
-    </button> */}
-    <div className="max-w-3xl mx-auto flex justify-center py-6 ">
-  <Link
-    href="/"
-    className="bg-purple-600 sm:px-6 md:px-8 px-4 rounded-xl cursor-pointer  
-      hover:opacity-80 active:opacity-70 text-white font-bold sm:py-2 py-2.5 text-xs lg:text-base"
-  >
-    Compare Colleges
-  </Link>
-</div>
 
-</div>
+<FooterBtn
+title={"Which college is right for you?"}
+content={`Every college on this list is outstanding in its own way. Whether you want research excellence (Stanford, Caltech), job-readiness (SJSU, Cal Poly), or a 
+    balanced public school experience (UC campuses), California has something tailored to your goals.
+    Still unsure? Use our  `}
+></FooterBtn>
 
     </main>
     
@@ -354,7 +304,3 @@ Here is the list
 }
 
 export default Engineeringcalifornia
-/*
-
-    </footer>
-*/

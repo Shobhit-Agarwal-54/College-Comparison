@@ -1,4 +1,4 @@
-import Engineeringcalifornia from "@/components/engineeringcalifornia";
+import Engineeringcalifornia from "@/blog-components/engineeringcalifornia";
 
 export const metadata = {
   title: "Best Engineering Colleges in California",
