@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import PsychologyCalifornia from "../components/card2";
+import Psychology from "../components/card2";
 import Logo from "../components/logo";
 import FooterBtn from "@/components/footerBtn";
 
@@ -26,7 +26,7 @@ Here is the list
 <span className="text-bold text-gray-950"> ranked from top to bottom</span>.
   </p>
 </section>
-<PsychologyCalifornia
+<Psychology
   name={"1. Stanford University"}
   why={"Stanford’s psychology program is consistently ranked among the top in the world. Their focus on interdisciplinary learning — blending psychology with neuroscience, education, and AI — gives students a competitive edge."}
   academic={[
@@ -47,7 +47,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"2. University of California, Berkeley"}
   why={"Berkeley’s psychology department is known for its groundbreaking research and social impact. The program is ideal for those interested in mental health policy, research, and social change."}
   academic={[
@@ -68,7 +68,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"3. University of California, Los Angeles (UCLA)"}
   why={"UCLA offers one of the largest and most comprehensive psychology programs in the country with heavy emphasis on both scientific research and mental health care."}
   academic={[
@@ -89,7 +89,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"4. University of California, San Diego (UCSD)"}
   why={"UCSD is a research-heavy school perfect for students interested in neuroscience and experimental psychology. Its Psychology Department is part of the School of Social Sciences, promoting cross-discipline exposure."}
   academic={[
@@ -110,7 +110,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"5. University of Southern California (USC)"}
   why={"USC’s psychology program is highly integrated with clinical training, real-world exposure, and connections to Hollywood and media psychology."}
   academic={[
@@ -131,7 +131,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"6. University of California, Davis"}
   why={"UC Davis has a top-tier developmental and biological psychology department with strong support for undergraduate research and internships."}
   academic={[
@@ -152,7 +152,7 @@ Here is the list
   ]}
 />
 
-<PsychologyCalifornia
+<Psychology
   name={"7. Pomona College"}
   why={"As a top liberal arts college, Pomona provides intensive mentorship and small-class learning — ideal for those who value depth over size."}
   academic={[

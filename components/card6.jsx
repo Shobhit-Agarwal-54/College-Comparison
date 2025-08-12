@@ -2,7 +2,14 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-export default function Psychology({name,why,academic,outcomes,vibes}) {
+
+export default function Card6({ 
+  name, 
+  overview, 
+  admission, 
+  academic, 
+  why 
+}) {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -36,59 +43,47 @@ export default function Psychology({name,why,academic,outcomes,vibes}) {
         className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 px-8 py-6 scrollbar-hide"
       >
         {/* Page 1 */}
-        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl  p-4 sm:p-6 space-y-4">
+        <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-4 sm:p-6 space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold">{name}</h2>
 
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold">Why it Stands Out?</h3>
-            <p className='text-sm sm:text-base'>
-            {why}
-            </p>
+            <h3 className="text-lg sm:text-xl font-semibold">Overview</h3>
+            <p className="text-sm sm:text-base">{overview}</p>
           </div>
 
           <div>
-            <h3 className="sm:text-xl text-lg font-semibold">Academic Highlights:</h3>
-            <ul className="list-disc list-inside text-sm sm:text-base">
-                {
-                academic.map((aca,index)=>
-                <li key={index}>{aca}</li>
-                )
-                }
-            </ul>
+            <h3 className="text-lg sm:text-xl font-semibold">Admission Profile</h3>
+            <p className="text-sm sm:text-base">{admission}</p>
           </div>
         </div>
-
 
         {/* Page 2 */}
         <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-4 sm:p-6 space-y-4">
           <div>
-            <h3 className="sm:text-xl text-lg font-semibold">Career Outcomes:</h3>
-            {
-                outcomes.map((outcome,index)=>
-                <p className='text-sm sm:text-base'
-                key={index}>{outcome}</p>
-                )
-            }
+            <h3 className="sm:text-xl text-lg font-semibold">Academic Highlights</h3>
+            <ul className="list-disc list-inside text-sm sm:text-base">
+              {academic.map((aca, index) => (
+                <li key={index}>{aca}</li>
+              ))}
+            </ul>
           </div>
 
           <div>
-            <h3 className="sm:text-xl text-lg font-semibold">Campus Vibes:</h3>
-            {
-                vibes.map((vibe,index)=>
-                <p key={index}
-                className='text-sm sm:text-base'
-                >{vibe}</p>
-                )
-            }
+            <h3 className="sm:text-xl text-lg font-semibold">Why It Stands Out</h3>
+            <p className="text-sm sm:text-base">{why}</p>
           </div>
-          <p className='text-gray-900 text-sm sm:text-base leading-relaxed'>Want to compare this college with others? Try our
+
+          <p className="text-gray-900 text-sm sm:text-base leading-relaxed">
+            Want to compare this college with others? Try our
             <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href={"https://college-comparison.vercel.app/"}
-            > <span className="text-purple-500">Free College Comparator Tool </span> </Link>
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://college-comparison.vercel.app/"
+            >
+              <span className="text-purple-500"> Free College Comparator Tool </span>
+            </Link>
             for instant comparisons.
-            </p>
+          </p>
         </div>
       </div>
     </div>
