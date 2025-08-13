@@ -173,13 +173,13 @@ Here is the list
   ]}
 />
 
-<FooterBtn
-title={"Still Deciding? Find Your Perfect Match"}
-content={`Exploring psychology is more than just choosing a college — it's about finding a place where your curiosity, compassion, and career goals align.
-California offers some of the best psychology programs in the country, 
-but which one truly fits your ambitions, budget, and learning style?
-Use our  `}
-></FooterBtn>
+  <FooterBtn
+  title={"Still Deciding? Find Your Perfect Match"}
+  content={`Exploring psychology is more than just choosing a college — it's about finding a place where your curiosity, compassion, and career goals align.
+  California offers some of the best psychology programs in the country, 
+  but which one truly fits your ambitions, budget, and learning style?
+  Use our  `}
+  ></FooterBtn>
     </main>
   )
 }

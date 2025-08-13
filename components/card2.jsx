@@ -63,23 +63,26 @@ export default function Psychology({name,why,academic,outcomes,vibes}) {
         <div className="min-w-full snap-center bg-white shadow-xl rounded-2xl p-4 sm:p-6 space-y-4">
           <div>
             <h3 className="sm:text-xl text-lg font-semibold">Career Outcomes:</h3>
+            <ul className='list-disc list-inside text-sm sm:text-base'>
             {
                 outcomes.map((outcome,index)=>
-                <p className='text-sm sm:text-base'
-                key={index}>{outcome}</p>
+                <li
+                key={index}>{outcome}</li>
                 )
             }
+            </ul>
           </div>
 
           <div>
             <h3 className="sm:text-xl text-lg font-semibold">Campus Vibes:</h3>
+            <ul className='list-disc list-inside text-sm sm:text-base'>
             {
                 vibes.map((vibe,index)=>
-                <p key={index}
-                className='text-sm sm:text-base'
-                >{vibe}</p>
+                <li key={index}
+                >{vibe}</li>
                 )
             }
+            </ul>
           </div>
           <p className='text-gray-900 text-sm sm:text-base leading-relaxed'>Want to compare this college with others? Try our
             <Link
